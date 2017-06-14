@@ -1,0 +1,61 @@
+{
+  "name": "machine-learning-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "testNode": "gulp testNode"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ventilador/machine-learning-js.git"
+  },
+  "keywords": [
+    "machine",
+    "learning",
+    "js",
+    "c++",
+    "svm",
+    "kmean",
+    "neural-network",
+    "neural",
+    "network",
+    "meanshift"
+  ],
+  "author": "Ventilador",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ventilador/machine-learning-js/issues"
+  },
+  "homepage": "https://github.com/Ventilador/machine-learning-js#readme",
+  "files": [
+    "bin",
+    "data",
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.4.2",
+    "jasmine": "^2.6.0",
+    "jshint": "^2.9.4",
+    "jslint": "^0.10.3",
+    "mocha": "^3.4.2"
+  },
+  "node-module-intellisense.fileModuleExtensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".d.ts",
+    ".tsx",
+    ".vue",
+    ".json"
+  ],
+  "dependencies": {
+    "@types/jasmine": "^2.5.47",
+    "@types/node": "^7.0.22",
+    "nan": "^2.6.2"
+  }
+}

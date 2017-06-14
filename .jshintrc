@@ -1,0 +1,25 @@
+{
+    "node": true,
+    "module": true,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "forin": true,
+    "varstmt": true,
+    "esversion": 6,
+    "latedef": false,
+    "noarg": true,
+    "boss": true,
+    "eqnull": true,
+    "loopfunc": true,
+    "-W079": true,
+    "quotmark": "single",
+    "jasmine": true,
+    "validthis": true,
+    "predef": [
+        "describe",
+        "it",
+        "cMath",
+        "MAX_LENGTH"
+    ]
+}
