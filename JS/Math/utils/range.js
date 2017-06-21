@@ -2,9 +2,14 @@ module.exports = function range(size_, mode_, length) {
     let size = size_;
     let toReturn = new Array(size);
     switch (mode_) {
+        case 'value':
+            while (size--) {
+                toReturn[size] = length;
+            }
+            break;
         case 'reverse':
             while (size--) {
-                toReturn[size] = size_ - size;
+                toReturn[size] = size_ - size - 1;
             }
             break;
         case 'random':

@@ -12,7 +12,6 @@ function sortedList(comparator, maxLength) {
     this.first = this.last = null;
 }
 sortedList.prototype.comparator = defaultComparator;
-sortedList.prototype[Symbol.iterator] = defaultIterator;
 sortedList.prototype.forEach = defaultForEach;
 sortedList.prototype.getFirst = defaultGetFirst;
 sortedList.prototype.slice = defaultSlice;
@@ -93,17 +92,6 @@ function defaultComparator(a, b) {
     return this.direction === a > b;
 }
 
-
-
-function* defaultIterator() {
-    if (this.length) {
-        let node = this.first;
-        do {
-            yield node.value;
-        } while (node = node.next);
-    }
-}
-
 function defaultForEach(cb, context_) {
     if (this.length) {
         let count = 0;
@@ -120,6 +108,9 @@ function defaultGetFirst(count) {
 }
 
 function defaultSlice(from_, end_) {
+    if (arguments.length === 0 || (from_ === 0 && end_ === this.length)) {
+        return sliceAll.apply(this);
+    }
     let from = from_ || 0;
     const toReturn = [];
     let end;
@@ -139,5 +130,18 @@ function defaultSlice(from_, end_) {
     } else if (from < 0) {
 
     }
+    return toReturn;
+}
+
+function sliceAll() {
+    let ii = this.length;
+    if (!ii) {
+        return [];
+    }
+    const toReturn = new Array(ii);
+    let node = this.last;
+    do {
+        toReturn[--ii] = node;
+    } while (node = node.prev);
     return toReturn;
 }
